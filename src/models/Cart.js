@@ -27,12 +27,15 @@ const Schema = new mongoose.Schema({
     },
     payment: {
         card: {
+            number: {
             Type: String,
            
         },
         cvc: {
+
             type: String,
             
+             }
         }
     }
 })
