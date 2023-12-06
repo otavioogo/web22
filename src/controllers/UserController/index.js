@@ -30,6 +30,20 @@ const UserController = {
         }
 
 
+    },
+
+    async getUserById(req, res) {
+        
+        const { user_id } = req.params
+
+        try {
+            const user = await User.findById(user_id)
+            return res.status(200).json(user)
+
+        } catch(err) {
+            return res.staus(400).json(err)
+        }
+
     }
  }
 

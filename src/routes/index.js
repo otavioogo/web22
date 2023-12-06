@@ -11,7 +11,7 @@ routes.get('/', (req , res ) => {
 routes.post('/users', UserController.createUser)
 routes.get('/users', UserController.getUsers)
 
-routes.get('/users/:user_id')
+routes.get('/users/:user_id', UserController.getUserById)
 
 routes.post('/login')
 
