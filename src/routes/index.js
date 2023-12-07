@@ -20,7 +20,7 @@ routes.post('/login', LoginController.createSession)
 routes.post('/products/:user_id', ProductController.createProduct)
 routes.get('/products/:user_id', ProductController.getUserProduct)
 routes.patch('/products/:user_id/:product_id', ProductController.updateProduct)
-routes.delete('/products/:user_id/:product_id', ProductController.deleteProdcut)
+routes.delete('/products/:user_id/:product_id', ProductController.deleteProduct)
 
 routes.get('/products', ProductController.getProducts)
 routes.get('/products/:products_id', ProductController.getProductById)

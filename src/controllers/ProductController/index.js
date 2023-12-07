@@ -55,9 +55,17 @@ const ProductController = {
         }
     },
 
-    async deleteProdcut(req, res) {
+    async deleteProduct(req, res) {
+        
+        const { product_id, user_id } = req.params
 
-        try {} catch(err) {
+        try {
+
+            const deleteProduct = await Product.findOneAndDelete(product_id)
+            return req.status(200).json(deleteProduct)
+
+
+        } catch(err) {
 
             return res.status(400).json(err)
         }
