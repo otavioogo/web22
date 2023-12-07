@@ -3,6 +3,7 @@ const {Router} = require('express')
 const UserController = require('../controllers/UserController')
 const LoginController = require('../controllers/Login')
 const ProductController = require('../controllers/ProductController')
+const CartController = require('../controllers/CartController')
 
 const routes = Router()
 
@@ -25,10 +26,10 @@ routes.delete('/products/:user_id/:product_id', ProductController.deleteProduct)
 routes.get('/products', ProductController.getProducts)
 routes.get('/products/:product_id', ProductController.getProductById)
 
-routes.post('/cart/:user_id')
-routes.get('/cart/:user_id')
+routes.post('/cart/:user_id', CartController.createCart)
+routes.get('/cart/:user_id', CartController.getUserCarts)
 
-routes.get('/cart/:cart_id')
+routes.get('/cart/:cart_id', CartController.getCart)
 
 
 module.exports = routes
