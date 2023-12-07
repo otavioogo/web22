@@ -4,6 +4,7 @@ const UserController = require('../controllers/UserController')
 const LoginController = require('../controllers/Login')
 const ProductController = require('../controllers/ProductController')
 const CartController = require('../controllers/CartController')
+const { authenticate } = require('../middlewares')
 
 const routes = Router()
 
@@ -26,10 +27,10 @@ routes.delete('/products/:user_id/:product_id', ProductController.deleteProduct)
 routes.get('/products', ProductController.getProducts)
 routes.get('/products/:product_id', ProductController.getProductById)
 
-routes.post('/cart/:user_id', CartController.createCart)
-routes.get('/cart/:user_id', CartController.getUserCarts)
+routes.post('/cart/:user_id',authenticate, CartController.createCart)
+routes.get('/cart/:user_id',authenticate, CartController.getUserCarts)
 
-routes.get('/cart/:cart_id', CartController.getCart)
+routes.get('/cart/:cart_id',authenticate, CartController.getCart)
 
 
 module.exports = routes
