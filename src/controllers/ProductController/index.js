@@ -75,7 +75,13 @@ const ProductController = {
     async getProducts(req , res) {
 
 
-        try {} catch(err) {
+        try {
+
+            const products = await Product.find()
+            return res.status(200).json(products)
+
+
+        } catch(err) {
 
             return res.status(400).json(err)
         }
@@ -83,7 +89,14 @@ const ProductController = {
 
     async getProductById(req, res) {
 
-        try {} catch(err) {
+            const { product_id } = req.params
+
+        try {
+
+            const product = await Product.findById(product_id)
+            return res.status(200).json(product)
+
+        } catch(err) {
 
             return res.status(400).json(err)
         }
