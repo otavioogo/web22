@@ -25,8 +25,15 @@ const ProductController = {
 
     async getUserProduct(req, res) {
 
+        const { user_id} = req.params
 
-        try {} catch(err) {
+        try {
+
+            const productsOfAnUser = await Product.find({ username: user_id})
+            return res.status(200).send(productsOfAnUser)
+
+            
+        } catch(err) {
 
             return res.status(400).json(err)
         }
