@@ -19,11 +19,11 @@ routes.post('/login', LoginController.createSession)
 
 routes.post('/products/:user_id', ProductController.createProduct)
 routes.get('/:user_id/products', ProductController.getUserProduct)
-routes.patch('/products/:user_id/:products_id', ProductController.updateProduct)
-routes.delete('/products/:user_id/:products_id', ProductController.deleteProduct)
+routes.patch('/products/:user_id/:product_id', ProductController.updateProduct)
+routes.delete('/products/:user_id/:product_id', ProductController.deleteProduct)
 
 routes.get('/products', ProductController.getProducts)
-routes.get('/products/:products_id', ProductController.getProductById)
+routes.get('/products/:product_id', ProductController.getProductById)
 
 routes.post('/cart/:user_id')
 routes.get('/cart/:user_id')
