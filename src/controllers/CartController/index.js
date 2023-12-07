@@ -21,7 +21,16 @@ const CartController = {
 
     async getUserCarts(req, res){
 
-        try {}
+        const { user_id } = req.params
+
+
+        try {
+
+            const userCarts = await Cart.find({ username: user_id})
+            return res.status(200).json(userCarts)
+
+
+        }
         catch(err){
             return res.status(400).json(err)
         }
@@ -30,7 +39,14 @@ const CartController = {
 
     async getCart(req, res) {
 
-        try {}
+        const { user_id, cart_id } = req.params
+
+        try {
+            
+            const cart = await Cart.findById(cart_id)
+            return res.status(200).json(Cart)
+
+        }
         catch(err){
             return res.status(400).json(err)
         }
