@@ -1,6 +1,7 @@
 const {Router} = require('express')
 
 const UserController = require('../controllers/UserController')
+const LoginController = require('../controllers/Login')
 
 const routes = Router()
 
@@ -13,7 +14,7 @@ routes.get('/users', UserController.getUsers)
 
 routes.get('/users/:user_id', UserController.getUserById)
 
-routes.post('/login')
+routes.post('/login', LoginController.createSession)
 
 routes.post('/product/:user_id')
 routes.get('/products/:user_id')
