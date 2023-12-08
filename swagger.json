@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "API",
+        "version": "1.0.0",
+        "description": "Api back-end",
+        "contact": {
+            "name": "otavioogow@gmail.com"
+        }
+    },
+
+    "servers": [{
+        "url": "http://localhost:8000",
+        "description": "Server Local"
+    }
+],
+
+    "schemes": ["http"],
+    "paths": {
+        "/users": {
+            "get": {
+                "description": "Listar Usuarios",
+                "parameters": [{
+                    "name": "user_id",
+                    "in": "query",
+                    "required": true
+                    
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Usuarios Listados com Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "date_created": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "description": "Data da listagem dos Usuarios"
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    
+
+                     "name": {
+                        "type": "string",
+                        "description": "Nome do usuario",
+                        "example": "Otavio"
+                     },
+                     
+            
+
+                "responses": {
+                    "500": {
+                        "description": "Erro interno do servidor",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "description": "Mensagem de erro"
+                                        },
+                     "mensage": {
+                        "type": "string",
+                        "description": "Mensagem de erro",
+                        "example": "Erro interno do servidor"
+                     },
+                     "status": {
+                        "type": "number",
+                        "description": "Status do erro",
+                        "example": 500
+                     }             
+                    }
+                }
+                }
+            }
+        }
+    }
+}
+    
+                
+        
