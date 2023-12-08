@@ -1,5 +1,6 @@
 const Product = require('../../models/Product')
 
+//CRIANDO O REPARTIMENTO CRUD DO PRODUTO - CREATE
 const ProductController = {
 
     async createProduct(req,  res) {
@@ -23,6 +24,7 @@ const ProductController = {
         }
     },
 
+//Listando produtos de usario especifico
     async getUserProduct(req, res) {
 
         const { user_id} = req.params
@@ -39,6 +41,7 @@ const ProductController = {
         }
     },
     
+//update no produto criado pelo USUARIO
     async updateProduct(req, res) {
 
         const bodyData = req.body
@@ -55,6 +58,7 @@ const ProductController = {
         }
     },
 
+//Deletar produto , tanto pelo id, quando pelo nome.
     async deleteProduct(req, res) {
         
         const { product_id, user_id } = req.params
@@ -72,6 +76,7 @@ const ProductController = {
 
     },
 
+//Listar Produtos apenas
     async getProducts(req , res) {
 
 
@@ -87,6 +92,7 @@ const ProductController = {
         }
     },
 
+//Listando produto pelo ID
     async getProductById(req, res) {
 
             const { product_id } = req.params

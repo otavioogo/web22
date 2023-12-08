@@ -1,6 +1,6 @@
 const User = require('../../models/User')
 
-
+//Criando a sessao do Usuario
 const LoginController = {
 
     async createSession (req, res) {

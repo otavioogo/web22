@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//Estrutura do produto com os campos
 const Schema = new mongoose.Schema({
     Productname: {
         type: String,

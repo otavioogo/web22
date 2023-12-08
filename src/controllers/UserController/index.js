@@ -1,5 +1,6 @@
 const User = require('../../models/User')
 
+//Regra de user
 const UserController = {
 
     async createUser(req, res) {

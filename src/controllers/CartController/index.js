@@ -1,5 +1,6 @@
 const Cart = require('../../models/Cart')
 
+//Criando a regra do carrinho
 const CartController = {
 
     async createCart(req, res) {
@@ -19,6 +20,7 @@ const CartController = {
 
     },
 
+//Carrinho pelo username
     async getUserCarts(req, res){
 
         const { user_id } = req.params
@@ -37,6 +39,7 @@ const CartController = {
 
     },
 
+//Carrinho pelo Usuario
     async getCart(req, res) {
 
         const { user_id, cart_id } = req.params

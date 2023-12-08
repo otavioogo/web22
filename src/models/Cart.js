@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 
+//Estrutura do carrinho de compra / + ID
 const Schema = new mongoose.Schema({
     products: [{
         type: mongoose.Schema.Types.ObjectId,
