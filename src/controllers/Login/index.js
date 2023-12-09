@@ -1,11 +1,16 @@
 const User = require('../../models/User')
+const token = require('../../middlewares')
 
 //Criando a sessao do Usuario
 const LoginController = {
 
     async createSession (req, res) {
 
-        const { username } = req.body
+        const { username, password } = req.body
+
+        const token = jwt.sign({ username }, jwtSecretKey, { expiresIn: '1h' });
+
+        res.json({ token });
 
         try {
 

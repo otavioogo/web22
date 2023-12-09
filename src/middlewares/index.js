@@ -2,15 +2,21 @@ const middlewares = {
 
     authenticate(req, res, next) {
 
-        const{ Authentication } = req.Headers
-        const { user_id } = req.params
+        const token = req.headers['authorization'];
 
-        if(!this.authentication) return res.status(400).json({message: 'No Token'})
-        if(authentication != user_id) return res.status(400).json({message: 'Not allowed'})
+        if (!token) {
+          return res.status(403).json({ message: 'Token não fornecido.' });
+        }
+      
+        jwt.verify(token, jwtSecretKey, (err, decoded) => {
+          if (err) {
+            return res.status(401).json({ message: 'Token inválido.' });
+          }
+      
+          req.user = decoded;
+          next();
+        });
 
-        next()
-    }
-
-}
+}}
 
 module.exports = middlewares
